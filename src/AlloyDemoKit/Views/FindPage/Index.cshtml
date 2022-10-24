@@ -13,7 +13,7 @@
 }
 
 <script language="javascript">
-        function spellcheck(query, hitsCutoff) {
+        @*function spellcheck(query, hitsCutoff) {
             $.ajax({
                 url: "@Model.PublicProxyPath" + "/_spellcheck?query=" + query + "&size=1&hits_cutoff=" + hitsCutoff,
                 dataType: 'jsonp',
@@ -56,14 +56,14 @@
                     }
                 }
             });
-        }
+        }*@
 
         $(function () {
             $("#srchTxt").autocomplete({
                 source: function (request, response) {
                     $.ajax({
-                        url: "@Model.PublicProxyPath" + "/_autocomplete?prefix=" + request.term + "&size=5",
-                        dataType: "jsonp",
+                        url: "/find_v2" + "/_autocomplete?prefix=" + request.term + "&size=5",
+                        dataType: "json",
                         contentType: 'application/json; charset=utf-8',
                         success: function (data) {
                             response($.map(data.hits, function (item) {
@@ -114,10 +114,10 @@
             {
                 @Html.Translate("/searchpagetemplate/zero")
 
-                <script type="text/javascript">spellcheck("@Model.Query", @Model.NumberOfHits);</script>
+                //<script type="text/javascript">spellcheck("@Model.Query", @Model.NumberOfHits);</script>
             }
 
-            <script type="text/javascript">relatedQuery("@Model.Query", @Model.NumberOfHits);</script>
+            @*<script type="text/javascript">relatedQuery("@Model.Query", @Model.NumberOfHits);</script>*@
 
             @*@Html.Translate("/searchpagetemplate/hits")*@
 

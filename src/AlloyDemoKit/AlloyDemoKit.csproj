@@ -678,6 +678,7 @@
     <Content Include="AddOns\Core\SearchAndReplace.aspx" />
     <Content Include="AddOns\Core\TimeMachine.aspx" />
     <Content Include="AdminTools\EmployeeSettings.aspx" />
+    <Content Include="App_Data\alloydemokit.mdf" />
     <Content Include="ClientResources\Images\icons\pdf-icon16x16.png" />
     <Content Include="ClientResources\Images\icons\pdf-icon32x32.png" />
     <Content Include="ClientResources\Styles\ContentColabFix.css" />
